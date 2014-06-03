@@ -15,6 +15,7 @@ public class ConquestFood extends JavaPlugin {
 	public static final Logger log = Logger.getLogger("Minecraft");
 	
 	static HashMap<String, Integer> foods = new HashMap<String, Integer>();
+	static HashMap<String, Long> combat = new HashMap<String, Long>();
 	
 	
 	public void onEnable() {
