@@ -10,7 +10,6 @@ import org.bukkit.event.entity.EntityRegainHealthEvent.RegainReason;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -19,22 +18,19 @@ public class ConquestFoodListener implements Listener {
 	
 	
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlayerEat(PlayerItemConsumeEvent e) {
 		System.out.println();
 		if(ConquestFood.foods.containsKey(e.getItem().getType().toString())){
 			Player p = e.getPlayer();
 			if(ConquestFood.combat.containsKey(p.getName())) {
-				System.out.println(ConquestFood.combat.get(p.getName()));
-				System.out.println(System.currentTimeMillis());
-				System.out.println(ConquestFood.combat.get(p.getName())+13000);
 				if(ConquestFood.combat.get(p.getName())+13000 < System.currentTimeMillis()) {
 					ConquestFood.combat.remove(p.getName());
 					p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, ConquestFood.foods.get(e.getItem().getType().toString())*25, 1, true));
 				}else {
-					ItemStack i = e.getItem();
-					i.setAmount(1);
-					p.getInventory().addItem(i);
+					e.setCancelled(true);
+					p.updateInventory();
 				}
 			}else {
 				p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, ConquestFood.foods.get(e.getItem().getType().toString())*25, 1, true));
