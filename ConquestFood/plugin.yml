@@ -1,0 +1,6 @@
+name: ConquestFood
+main: me.supermaxman.conquestfood.ConquestFood
+version: 1.0.0
+author: Supermaxman
+description: ConquestFood!
+commands:

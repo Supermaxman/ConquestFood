@@ -1,0 +1,28 @@
+#
+# Notes:
+# The number is how many half-hearts a given food will regen. If you want a food to regen 2 hearts put the number 6, but if you want the food to regen 1 and 1/2 hearts put 2.
+# '2' = 1 Heart
+# This is compatible for any type of consumable, just make sure you use the correct technical name for it. For technical names see this link:
+# http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html
+foods:
+  APPLE: '2'
+  BAKED_POTATO: '2'
+  BREAD: '2'
+  CARROT: '2'
+  COOKED_BEEF: '2'
+  COOKED_CHICKEN: '2'
+  COOKED_FISH: '2'
+  COOKIE: '2'
+  GOLDEN_APPLE: '2'
+  GRILLED_PORK: '2'
+  MELON: '2'
+  MUSHROOM_SOUP: '2'
+  POISONOUS_POTATO: '2'
+  PORK: '2'
+  POTATO_ITEM: '2'
+  PUMPKIN_PIE: '2'
+  RAW_BEEF: '2'
+  RAW_CHICKEN: '2'
+  RAW_FISH: '2'
+  ROTTEN_FLESH: '2'
+  SPIDER_EYE: '2'
