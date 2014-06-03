@@ -10,6 +10,7 @@ import org.bukkit.event.entity.EntityRegainHealthEvent.RegainReason;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -61,6 +62,11 @@ public class ConquestFoodListener implements Listener {
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
+		e.getPlayer().setFoodLevel(19);
+	}
+	
+	@EventHandler
+	public void onPlayerMove(PlayerMoveEvent e) {
 		e.getPlayer().setFoodLevel(19);
 	}
 	
