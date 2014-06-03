@@ -48,6 +48,16 @@ public class ConquestFoodListener implements Listener {
 					Player d = (Player) ((EntityDamageByEntityEvent) e).getDamager();
 					ConquestFood.combat.put(p.getName(), System.currentTimeMillis());
 					ConquestFood.combat.put(d.getName(), System.currentTimeMillis());
+					for (PotionEffect effect : p.getActivePotionEffects()) {
+						if(effect.getType().equals(PotionEffectType.REGENERATION) && effect.isAmbient()) {
+							p.removePotionEffect(PotionEffectType.REGENERATION);
+						}
+					}
+					for (PotionEffect effect : d.getActivePotionEffects()) {
+						if(effect.getType().equals(PotionEffectType.REGENERATION) && effect.isAmbient()) {
+							d.removePotionEffect(PotionEffectType.REGENERATION);
+						}
+					}
 				}
 			}
 		}
